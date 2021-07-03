@@ -1,0 +1,22 @@
+	index.html
+	about
+	contact
+
+	account
+
+		login
+		signup
+		(account) settings
+
+	stores/		
+			index (db list of all the stores associated)
+			view-store (list products)
+			become a member
+	catalogue/
+			index (db list of all the products)			
+			view-product (list by stores)
+	
+XXXX	CART
+		cart
+		checkout
+		history

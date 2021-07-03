@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initialscale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+<label>
+Enter the keyword..
+<input type="text" class="txtInput" id="searchTheKey" placeholder="Enter the keywords to search.....">
+</label>
+<ul id="matchKey">
+    <li class="list-group-item d-flex justify-content-between lh-condensed" id="subjectName">
+        <div>
+            <h6 class="my-0">Onion (500g)</h6>
+            <p class="card-title pricing-card-title">₹
+                <?php echo $row['101'] ?>
+            </p>
+        </div>
+        <span class="text-muted"><button type="button"
+                class="btn float-right btn-outline-primary"
+                onclick="cartLS.add({id: 101, name: 'Onion', price: <?php echo $row['101'] ?>})">Add
+                to Cart</button></span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between lh-condensed" id="subjectName">
+        <div>
+            <h6 class="my-0">toamto(500g)</h6>
+            <p class="card-title pricing-card-title">₹
+                <?php echo $row['101'] ?>
+            </p>
+        </div>
+        <span class="text-muted"><button type="button"
+                class="btn float-right btn-outline-primary"
+                onclick="cartLS.add({id: 101, name: 'Onion', price: <?php echo $row['101'] ?>})">Add
+                to Cart</button></span>
+    </li>
+
+<li id="subjectName">Java</li>
+<li id="subjectName">MongoDB</li>
+</ul>
+<script>
+    $("#searchTheKey").on('keyup', function(){
+        var value = $(this).val().toLowerCase();
+        $("#matchKey li").each(function () {
+            if ($(this).text().toLowerCase().search(value) > -1) {
+                $(this).show();
+                $(this).prev('.subjectName').last().show();
+                } else {
+                $(this).hide();
+            }
+        });
+    })
+</script>
+</body>
+</html>
